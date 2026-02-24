@@ -1,0 +1,5 @@
+v1.0.1: 
+  - First version of ClubReady
+  - create_staff_table.php
+  - create_packages_table.php
+  - create_installments_table.php

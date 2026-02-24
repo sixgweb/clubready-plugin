@@ -1,0 +1,18 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    is_enabled:
+        label: Enabled
+        type: switch
+
+    first_name: First Name
+
+    last_name: Last Name
+
+    email: Email
+
+    photo:
+        label: Photo
+        type: image

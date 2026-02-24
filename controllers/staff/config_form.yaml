@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Staff
+
+# Model Form Field configuration
+form: $/sixgweb/clubready/models/staff/fields.yaml
+
+# Model Class name
+modelClass: Sixgweb\ClubReady\Models\Staff
+
+# Default redirect location
+defaultRedirect: sixgweb/clubready/staff
+
+# Create page
+create:
+    title: backend::lang.form.create_title
+    redirect: sixgweb/clubready/staff/update/:id
+    redirectClose: sixgweb/clubready/staff
+
+# Update page
+update:
+    title: backend::lang.form.update_title
+    redirect: sixgweb/clubready/staff
+    redirectClose: sixgweb/clubready/staff
+
+# Preview page
+preview:
+    title: backend::lang.form.preview_title

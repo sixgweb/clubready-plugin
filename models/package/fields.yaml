@@ -1,0 +1,49 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    is_enabled:
+        label: Enabled
+        type: switch
+        span: left
+        default: true
+        comment: Enable or disable this package on the website
+
+    clubready_id:
+        label:
+        span: right
+        disabled: true
+        
+    name:
+        label: Name
+        span: left
+        disabled: true
+        comment: The name of the package as defined in ClubReady.
+
+    name_override:
+        label: Name Override
+        span: right
+        comment: An optional name to override the default package name.
+    
+    price:
+        label: Price
+        type: number
+        span: left
+        disabled: true
+        comment: The price of the package as defined in ClubReady.
+        attributes:
+            style: "text-align: left;"
+
+    price_override:
+        label: Price Override
+        type: number
+        span: right
+        comment: An optional price to override the default package price.
+
+    installments:
+        label: Installments
+        type: relation
+        span: full
+        comment: The installments associated with this package.
+        nameFrom: payment_amount

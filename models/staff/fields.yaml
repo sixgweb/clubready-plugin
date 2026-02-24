@@ -1,0 +1,48 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    is_enabled:
+        label: Enabled
+        type: switch
+        span: left
+        default: true
+        comment: Enable or disable this package on the website
+
+    clubready_id:
+        label:
+        span: right
+        disabled: true
+
+    photo:
+        label: Photo
+        type: fileupload
+        mode: image
+        span: left
+        disabled: true
+        
+    first_name:
+        label: Name
+        span: left
+        disabled: true
+
+    last_name:
+        label: Last Name
+        span: right
+        disabled: true
+    
+    email:
+        label: Email
+        span: right
+        disabled: true
+
+    title:
+        label: Title
+        span: left
+        disabled: true
+
+    bio:
+        label: Bio
+        type: textarea
+        disabled: true

@@ -1,0 +1,22 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    api_endpoint:
+        label: API Endpoint
+        type: text
+        span: full
+        comment: 'The base URL for the ClubReady API (e.g., https://api.clubready.com/)'
+
+    api_key:
+        label: API Key
+        type: sensitive
+        span: auto
+        comment: 'Your ClubReady API key for authentication.'
+
+    store_id:
+        label: Store ID
+        type: text
+        span: auto
+        comment: 'The Store ID associated with your ClubReady account.'

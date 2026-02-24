@@ -1,0 +1,20 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    installment_id: 
+        label: Installment ID
+        clickable: false
+
+    payment_count: 
+        label: Payment Count
+        clickable: false
+
+    payment_amount: 
+        label: Payment Amount
+        clickable: false
+
+    setup_fee: 
+        label: Setup Fee
+        clickable: false

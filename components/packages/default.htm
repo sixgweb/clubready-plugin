@@ -1,0 +1,14 @@
+<div class="row row-cols-1 g-4 justify-content-center">
+{% for package in packages %}
+    <div class="col d-flex">
+        <div class="card flex-fill" data-bs-theme="light" >
+            <div class="card-body text-center">
+                <h3 class="fs-4 text-bg-warning p-2 rounded">{{ package.name_override ? package.name_override : package.name }}</h3>
+                <h2>${{ package.price }}</h2>
+                <p>Enrollment Fee: {{ package.setup_fee ? '$' ~ package.setup_fee|number_format(2) : 'FREE' }}</p>
+                <a href="https://www.clubready.com/getstarted/step1.asp?s={{ storeId }}&id={{ package.installments.first().installment_id }}" class="btn btn-dark mt-3">Join Now!</a>
+            </div>
+        </div>
+    </div>
+{% endfor %}
+</div>

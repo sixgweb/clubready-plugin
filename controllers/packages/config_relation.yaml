@@ -1,0 +1,10 @@
+# config_relation.yaml
+installments:
+    label: Installments
+    readOnly: true
+    view:
+        list: $/sixgweb/clubready/models/installment/columns.yaml
+        toolbarButtons: false
+        recordsPerPage: 10
+    manage:
+        form: $/sixgweb/clubready/models/installment/fields.yaml

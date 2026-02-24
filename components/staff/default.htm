@@ -1,0 +1,21 @@
+
+<div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 justify-content-center">
+{% for s in  staff %}
+    <div class="col d-flex">
+        <div class="card flex-fill">
+            <div class="card-body text-center">
+                <div class="mb-4">
+                    {% if s.photo %}
+                        <img src="{{ s.photo.getPath()|resize(200, 200, {mode: 'crop' }) }}" alt="{{ s.first_name }} {{ s.last_name }}" class="img-fluid rounded-circle mb-3" alt="{{ s.first_name }} {{ s.last_name }} profile photo">
+                    {% else %}
+                        <img src="{{ this.theme.logo|media }}" class="img-fluid" alt="Profile image placeholder" />
+                    {% endif %}
+                </div>
+                <h3 class="fs-4 p-2">{{ s.first_name }} {{ s.last_name }}</h3>
+                {{ s.title }}
+            </div>
+        </div>
+    </div>
+{% endfor %}
+</div>
+

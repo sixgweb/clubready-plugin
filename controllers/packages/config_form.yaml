@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Package
+
+# Model Form Field configuration
+form: $/sixgweb/clubready/models/package/fields.yaml
+
+# Model Class name
+modelClass: Sixgweb\ClubReady\Models\Package
+
+# Default redirect location
+defaultRedirect: sixgweb/clubready/packages
+
+# Create page
+create:
+    title: backend::lang.form.create_title
+    redirect: sixgweb/clubready/packages/update/:id
+    redirectClose: sixgweb/clubready/packages
+
+# Update page
+update:
+    title: backend::lang.form.update_title
+    redirect: sixgweb/clubready/packages
+    redirectClose: sixgweb/clubready/packages
+
+# Preview page
+preview:
+    title: backend::lang.form.preview_title
