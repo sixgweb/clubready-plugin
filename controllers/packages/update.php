@@ -1,6 +1,6 @@
 <?php Block::put('breadcrumb') ?>
 <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="<?= Backend::url('sixgweb/instagrammedia/packages') ?>">Media</a></li>
+    <li class="breadcrumb-item"><a href="<?= Backend::url('sixgweb/clubready/packages') ?>">Packages</a></li>
     <li class="breadcrumb-item active" aria-current="page"><?= e($this->pageTitle) ?></li>
 </ol>
 <?php Block::endPut() ?>
@@ -44,7 +44,7 @@
             <span class="btn-text">
                 <span class="button-separator"><?= __("or") ?></span>
                 <a
-                    href="<?= Backend::url('sixgweb/instagrammedia/packages') ?>"
+                    href="<?= Backend::url('sixgweb/clubready/packages') ?>"
                     class="btn btn-link p-0">
                     <?= __("Cancel") ?>
                 </a>
