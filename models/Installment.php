@@ -28,6 +28,7 @@ class Installment extends Model
         'package_id',
         'payment_count',
         'payment_amount',
+        'first_payment_amount',
         'setup_fee',
     ];
 }

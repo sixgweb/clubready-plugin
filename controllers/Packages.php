@@ -53,6 +53,8 @@ class Packages extends Controller
     {
         $disabled = Package::where('is_enabled', false)->pluck('clubready_id')->toArray();
 
+        Installment::query()->delete();
+
         foreach ($this->getApiResponse('/sales/packages') as $packageData) {
 
             //Skip non-automatically renewing packages and those without contracts
@@ -81,10 +83,13 @@ class Packages extends Controller
                     }
                 }
 
+                $calculationData = $this->getApiResponse('/sales/packages/' . $packageData['Id'] . '/installments/calculate/' . $installmentData['Id']);
+
                 Installment::firstOrCreate([
                     'installment_id' => $installmentData['Id'],
                     'package_id' => $packageData['Id'],
                     'payment_count' => trim($installmentData['PaymentCount']),
+                    'first_payment_amount' => $calculationData['SubTotal'] ?? 0,
                     'payment_amount' => $installmentData['DuePerPayment'],
                     'setup_fee' => $setupFee,
                 ]);

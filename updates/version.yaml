@@ -3,3 +3,6 @@ v1.0.1:
   - create_staff_table.php
   - create_packages_table.php
   - create_installments_table.php
+v1.0.2:
+  - Added first_payment_amount to installments
+  - add_first_payment_amount_to_installments_table.php

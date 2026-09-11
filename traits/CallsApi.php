@@ -12,7 +12,7 @@ trait CallsApi
     public function getApiUrl($path = ''): string
     {
         $url = ClubReadySetting::get('api_endpoint');
-        return str_replace('//', '/', $url . $path);
+        return $url . str_replace('//', '/', $path);
     }
 
     private function getApiResponse($path, $data = null, $method = null)
