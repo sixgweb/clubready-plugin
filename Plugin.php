@@ -13,6 +13,10 @@ use System\Classes\PluginBase;
  */
 class Plugin extends PluginBase
 {
+
+    use \Sixgweb\ClubReady\Traits\CallsApi;
+    use \Sixgweb\ClubReady\Traits\SyncsPackages;
+
     /**
      * pluginDetails about this plugin.
      */
@@ -37,10 +41,7 @@ class Plugin extends PluginBase
     /**
      * boot method, called right before the request route.
      */
-    public function boot()
-    {
-        //
-    }
+    public function boot() {}
 
     /**
      * registerComponents used by the frontend.
@@ -116,9 +117,7 @@ class Plugin extends PluginBase
     public function registerSchedule($schedule)
     {
         $schedule->call(function () {
-            Package::get()->each(function ($package) {
-                $package->syncFromClubReady();
-            });
+            $this->syncClubReadyPackages();
         })->daily();
     }
 }

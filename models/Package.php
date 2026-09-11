@@ -11,6 +11,7 @@ use Model;
  */
 class Package extends Model
 {
+    use \Sixgweb\ClubReady\Traits\CallsApi;
     use \October\Rain\Database\Traits\Validation;
     use \October\Rain\Database\Traits\Sortable;
 
@@ -39,15 +40,6 @@ class Package extends Model
             'otherKey' => 'clubready_id',
         ],
     ];
-
-    public function syncFromClubReady()
-    {
-        if ($package = $this->getApiResponse('/package/' . $this->clubready_id)) {
-            $this->name = $package->Name;
-            $this->price = trim($package->Price);
-            $this->save();
-        }
-    }
 
     public function getSetupFeeAttribute()
     {
