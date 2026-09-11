@@ -50,6 +50,11 @@ class Package extends Model
         return $setupFee;
     }
 
+    public function getFirstPaymentAmountAttribute()
+    {
+        return $this->installments()->first()->first_payment_amount ?? 0;
+    }
+
     public function getPackageNameAttribute()
     {
         return $this->name_override ?: $this->name;

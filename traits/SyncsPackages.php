@@ -47,11 +47,19 @@ trait SyncsPackages
 
                 $calculationData = $this->getApiResponse('/sales/packages/' . $packageData['Id'] . '/installments/calculate/' . $installmentData['Id']);
 
+                $firstPaymentAmount = $calculationData['SubTotal'] ?? 0;
+                foreach ($calculationData['Payments'] as $payment) {
+                    if ($payment['PayToday']) {
+                        $firstPaymentAmount = $payment['Amount'];
+                        break;
+                    }
+                }
+
                 Installment::firstOrCreate([
                     'installment_id' => $installmentData['Id'],
                     'package_id' => $packageData['Id'],
                     'payment_count' => trim($installmentData['PaymentCount']),
-                    'first_payment_amount' => $calculationData['SubTotal'] ?? 0,
+                    'first_payment_amount' => $firstPaymentAmount,
                     'payment_amount' => $installmentData['DuePerPayment'],
                     'setup_fee' => $setupFee,
                 ]);

@@ -14,6 +14,12 @@ columns:
 
     price: Price
 
+    setup_fee:
+        label: Setup Fee
+
+    first_payment_amount:
+        label: First Payment Amount
+
     installments:
         label: Installments
         relation: installments

@@ -15,6 +15,10 @@ columns:
         label: Payment Amount
         clickable: false
 
+    first_payment_amount:
+        label: First Payment Amount
+        clickable: false
+
     setup_fee: 
         label: Setup Fee
         clickable: false
